@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Linux工作环境手册 by zhang3</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="without-description">
+        <h1>Linux工作环境手册</h1>
+        <p></p>
+        <p class="view"><a href="https://github.com/zhang3">View the Project on GitHub <small>zhang3</small></a></p>
+        <ul>
+          <li class="single"><a href="https://github.com/zhang3/zhang3.github.com">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="%E8%BF%99%E4%B8%80%E9%A1%B5%E5%B0%B1%E6%98%AF%E4%B8%80%E4%B8%AAcheatbook" class="anchor" href="#%E8%BF%99%E4%B8%80%E9%A1%B5%E5%B0%B1%E6%98%AF%E4%B8%80%E4%B8%AAcheatbook"><span class="octicon octicon-link"></span></a>这一页就是一个cheatbook。</h1>
+
+<h2>
+<a name="%E4%B8%B2%E5%8F%A3%E5%B7%A5%E5%85%B7" class="anchor" href="#%E4%B8%B2%E5%8F%A3%E5%B7%A5%E5%85%B7"><span class="octicon octicon-link"></span></a>串口工具</h2>
+
+<h3>
+<a name="putty" class="anchor" href="#putty"><span class="octicon octicon-link"></span></a>PuTTY</h3>
+
+<p>免费开源，简单，极稳定，极快速。这是我一直在用的软件。
+1. 不支持<code>TAB</code>，原来不支持TAB是有原因的，<code>TMUX</code>是比使用TAB更好的解决方法。
+2. 不能记住密码：错，可以在快捷方式里面写，但是密码写在快捷方式里，要注意。
+3. 不支持ssh-keygen 产生的公钥：暂时不知道怎么解决，要转换成PUTTY的格式。</p>
+
+<h3>
+<a name="teraterm" class="anchor" href="#teraterm"><span class="octicon octicon-link"></span></a>TeraTerm</h3>
+
+<p>免费开源，支持脚本，稳定。
+1. 相比<code>PuTTY</code>比较闪烁
+2. 选择文本后，有时一直会留有个反显的方块。
+3. 串口口接收大量反复数据后，会有异常，总是显示以前反复的数据。</p>
+
+<h3>
+<a name="absulote-telenet" class="anchor" href="#absulote-telenet"><span class="octicon octicon-link"></span></a>Absulote Telenet</h3>
+
+<p>商业软件，曾试用过一段时间，给我印象深刻的是，能高亮查找到的单词。
+稳定性，有时候你的程序写有问题，一下子不断地发送数据，试试再说吧。
+2013.12.14
+今天特意下载了一个来用，有Lite版本，是免费的，串口与telnet可以用。
+也很稳写，果然神器了。</p>
+
+<h3>
+<a name="scrt" class="anchor" href="#scrt"><span class="octicon octicon-link"></span></a>S...CRT</h3>
+
+<p>商业软件，试用过，稳定性好。
+1. 有个现象，就是 make menuconfig 退出，字符有时反显了，跟官方联系，红毛老拒不承
+认能出现这个现象。
+2. 启动速度也比较慢。</p>
+
+<h2>
+<a name="git" class="anchor" href="#git"><span class="octicon octicon-link"></span></a>GIT</h2>
+
+<pre><code>git cherry-pick e16e516c049d8d6eb637243115dc0c507d967ef4
+</code></pre>
+
+<p>合并单独一个<code>commit</code>。</p>
+
+<h2>
+<a name="tftp-%E6%9C%8D%E5%8A%A1%E5%99%A8" class="anchor" href="#tftp-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="octicon octicon-link"></span></a>TFTP 服务器</h2>
+
+<p>配置连接：<a href="http://www.mmweg.rwth-aachen.de/%7Ephilipp.michalschik/wordpress/running-tftp-server-on-ubuntu-12-04-lts-precise/">http://www.mmweg.rwth-aachen.de/~philipp.michalschik/wordpress/running-tftp-server-on-ubuntu-12-04-lts-precise/</a></p>
+
+<h2>
+<a name="tmux" class="anchor" href="#tmux"><span class="octicon octicon-link"></span></a>TMUX</h2>
+
+<h3>
+<a name="1-%E8%BF%9C%E7%A8%8B%E5%8D%8F%E5%8A%A9" class="anchor" href="#1-%E8%BF%9C%E7%A8%8B%E5%8D%8F%E5%8A%A9"><span class="octicon octicon-link"></span></a>1. 远程协助</h3>
+
+<h3>
+<a name="2-%E5%A4%9A%E4%B8%AA%E7%BB%88%E7%AB%AF%E9%98%B2%E6%AD%A2%E4%B8%AD%E9%80%94%E6%8C%82%E6%8E%89" class="anchor" href="#2-%E5%A4%9A%E4%B8%AA%E7%BB%88%E7%AB%AF%E9%98%B2%E6%AD%A2%E4%B8%AD%E9%80%94%E6%8C%82%E6%8E%89"><span class="octicon octicon-link"></span></a>2. 多个终端，防止中途挂掉</h3>
+
+<h3>
+<a name="3-%E5%8F%82%E8%80%83%E7%BD%91%E9%A1%B5" class="anchor" href="#3-%E5%8F%82%E8%80%83%E7%BD%91%E9%A1%B5"><span class="octicon octicon-link"></span></a>3. 参考网页</h3>
+
+<p>(<a href="https://mutelight.org/practical-tmux">https://mutelight.org/practical-tmux</a>)</p>
+
+<p>set-option -g prefix C-v
+unbind-key C-b
+bind-key C-v send-prefix</p>
+
+<p>C-b ? 显示快捷键帮助
+C-b C-o 调换窗口位置
+C-b 空格键 采用下一个内置布局
+C-b ! 把当前窗口变为新窗口
+C-b " 模向分隔窗口
+C-b % 纵向分隔窗口
+C-b q 显示分隔窗口的编号
+C-b o 跳到下一个分隔窗口
+C-b 上下键 上一个及下一个分隔窗口
+C-b C-方向键 调整分隔窗口大小
+C-b c 创建新窗口
+C-b 0~9 选择几号窗口
+C-b c 创建新窗口
+C-b n 选择下一个窗口
+C-b l 最后使用的窗口
+C-b p 选择前一个窗口
+C-b w 以菜单方式显示及选择窗口
+C-b s 以菜单方式显示和选择会话
+C-b t 显示时钟</p>
+
+<h2>
+<a name="screen" class="anchor" href="#screen"><span class="octicon octicon-link"></span></a>SCREEN</h2>
+
+<h3>
+<a name="1-%E4%B8%B2%E5%8F%A3%E7%A8%8B%E5%BA%8F" class="anchor" href="#1-%E4%B8%B2%E5%8F%A3%E7%A8%8B%E5%BA%8F"><span class="octicon octicon-link"></span></a>1. 串口程序</h3>
+
+<h3>
+<a name="2-%E7%BB%88%E7%AB%AF%E5%A4%8D%E7%94%A8" class="anchor" href="#2-%E7%BB%88%E7%AB%AF%E5%A4%8D%E7%94%A8"><span class="octicon octicon-link"></span></a>2. 终端复用</h3>
+
+<h3>
+<a name="3-%E8%BF%9C%E7%A8%8B%E5%8D%8F%E5%8A%A9" class="anchor" href="#3-%E8%BF%9C%E7%A8%8B%E5%8D%8F%E5%8A%A9"><span class="octicon octicon-link"></span></a>3. 远程协助</h3>
+
+<h3>
+<a name="4-%E6%96%AD%E7%BA%BF%E4%BF%9D%E7%95%99" class="anchor" href="#4-%E6%96%AD%E7%BA%BF%E4%BF%9D%E7%95%99"><span class="octicon octicon-link"></span></a>4. 断线保留</h3>
+
+<h2>
+<a name="bash" class="anchor" href="#bash"><span class="octicon octicon-link"></span></a>BASH</h2>
+
+<h3>
+<a name="1-%E6%8C%89%E9%94%AE%E9%87%8D%E5%AE%9A%E4%B9%89httpwwwlinuxsirorgbbsthread237528html" class="anchor" href="#1-%E6%8C%89%E9%94%AE%E9%87%8D%E5%AE%9A%E4%B9%89httpwwwlinuxsirorgbbsthread237528html"><span class="octicon octicon-link"></span></a>1. 按键重定义(<a href="http://www.linuxsir.org/bbs/thread237528.html">http://www.linuxsir.org/bbs/thread237528.html</a>)</h3>
+
+<h2>
+<a name="mutt" class="anchor" href="#mutt"><span class="octicon octicon-link"></span></a>MUTT</h2>
+
+<h3>
+<a name="1-httpmuttblackfishorguk" class="anchor" href="#1-httpmuttblackfishorguk"><span class="octicon octicon-link"></span></a>1. <a href="http://mutt.blackfish.org.uk/">http://mutt.blackfish.org.uk/</a>
+</h3>
+
+<h2>
+<a name="%E7%B2%BE%E5%93%81%E7%BD%91%E7%AB%99" class="anchor" href="#%E7%B2%BE%E5%93%81%E7%BD%91%E7%AB%99"><span class="octicon octicon-link"></span></a>精品网站</h2>
+
+<h3>
+<a name="%E6%97%B6%E9%97%B4%E4%B8%8E%E6%97%A5%E6%9C%9F%E4%B8%96%E7%95%8C%E6%97%B6%E9%92%9F%E5%9B%BD%E9%99%85%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%AE%89%E6%8E%92" class="anchor" href="#%E6%97%B6%E9%97%B4%E4%B8%8E%E6%97%A5%E6%9C%9F%E4%B8%96%E7%95%8C%E6%97%B6%E9%92%9F%E5%9B%BD%E9%99%85%E4%BC%9A%E8%AE%AE%E6%97%B6%E9%97%B4%E5%AE%89%E6%8E%92"><span class="octicon octicon-link"></span></a>时间与日期，世界时钟，国际会议时间安排。</h3>
+
+<p><a href="http://www.timeanddate.com/">http://www.timeanddate.com/</a></p>
+
+<h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+
+<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+
+<pre><code>$ cd your_repo_root/repo_name
+$ git fetch origin
+$ git checkout gh-pages
+</code></pre>
+
+<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+
+<h3>
+<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+
+<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+
+<h3>
+<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+
+<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+
+<h3>
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+
+<h3>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+      </section>
+    </div>
+    <footer>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
